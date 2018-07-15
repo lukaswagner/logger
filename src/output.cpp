@@ -45,7 +45,7 @@ void logger::Output::write(const Line & line) const
 
     if(line.level() >= m_consoleLevel)
     {
-        std::cout << string << std::endl;
+        (line.level() >= Warning ? std::cerr : std::cout) << string << std::endl;
     }
 
     if(line.level() >= m_fileLevel)

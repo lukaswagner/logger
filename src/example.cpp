@@ -2,5 +2,6 @@
 
 int main(int argc, char* argv[])
 {
-    logger::debug("test");
+    enable(logger::Info, logger::Info);
+    logger::info("test") << "something " << "something else";
 }

@@ -18,11 +18,18 @@ set(export_header
     ${generated_header_dir}/logger_export.hpp)
 
 set(public_headers
-	${include_dir}/logger.hpp
+    ${include_dir}/level.hpp
+    ${include_dir}/line.hpp
+    ${include_dir}/logger.hpp
     ${export_header})
 
+set(private_headers
+	${include_dir}/output.hpp)
+
 set(sources
-	${source_dir}/logger.cpp)
+    ${source_dir}/line.cpp
+    ${source_dir}/logger.cpp
+    ${source_dir}/output.cpp)
 
 set(example_sources
     ${source_dir}/example.cpp)
@@ -30,7 +37,7 @@ set(example_sources
 # lib target
 
 include_directories(${generated_header_dir})
-add_library(logger SHARED ${public_headers} ${sources})
+add_library(logger SHARED ${public_headers} ${private_headers} ${sources})
 
 include(GenerateExportHeader)
 generate_export_header(logger

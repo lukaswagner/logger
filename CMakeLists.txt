@@ -59,3 +59,7 @@ if (${BUILD_EXAMPLE})
     target_link_libraries(example logger)
     set(VS_STARTUP_PROJECT example)
 endif()
+
+if(EXISTS ${CMAKE_SOURCE_DIR}/dependencies/cpp-style-settings)
+    add_subdirectory(dependencies/cpp-style-settings EXCLUDE_FROM_ALL)
+endif()

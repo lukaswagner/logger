@@ -1,0 +1,3 @@
+[submodule "dependencies/cpp-style-settings"]
+	path = dependencies/cpp-style-settings
+	url = git@github.com:lukaswagner/cpp-style-settings.git

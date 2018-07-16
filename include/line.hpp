@@ -1,11 +1,10 @@
 #pragma once
 
-#include "logger_export.hpp"
-
 #include <string>
 #include <memory>
 
 #include "level.hpp"
+#include "logger_export.hpp"
 
 namespace logger
 {

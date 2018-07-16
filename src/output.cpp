@@ -2,15 +2,12 @@
 
 #include <iostream>
 #include <sstream>
-#include <filesystem>
 
 #if defined(_WIN32)
 #include <Windows.h>
 #else
 #include <sys/stat.h>
 #endif
-
-#include "../include/logger.hpp"
 
 logger::Output::Output(const Level & consoleLevel, const Level & fileLevel)
     : m_consoleLevel(consoleLevel)

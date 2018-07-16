@@ -24,9 +24,11 @@ set(public_headers
     ${export_header})
 
 set(private_headers
-	${include_dir}/output.hpp)
+    ${include_dir}/globals.hpp
+    ${include_dir}/output.hpp)
 
 set(sources
+    ${source_dir}/globals.cpp
     ${source_dir}/line.cpp
     ${source_dir}/logger.cpp
     ${source_dir}/output.cpp)

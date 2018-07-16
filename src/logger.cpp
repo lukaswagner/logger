@@ -1,13 +1,6 @@
 #include "../include/logger.hpp"
 
-namespace logger
-{
-    bool g_enabled = false;
-    int g_contextLength = 10;
-    bool g_printTime = true;
-    std::string g_timeFormat = "%H:%M:%S";
-    std::shared_ptr<Output> g_output = nullptr;
-}
+#include "../include/globals.hpp"
 
 void logger::enable(const Level & consoleLevel, const Level & fileLevel)
 {

@@ -1,11 +1,11 @@
 #include "../include/line.hpp"
 
+#include <ctime>
+#include <iomanip>
 #include <sstream>
 #include <utility>
-#include <ctime>
 
-#include "../include/logger.hpp"
-#include <iomanip>
+#include "../include/globals.hpp"
 
 logger::Line::Line(const Level & level, std::string context)
     : m_level(level)

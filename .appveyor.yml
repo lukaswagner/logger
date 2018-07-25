@@ -1,0 +1,14 @@
+image:
+  - Visual Studio 2017
+configuration:
+  - Release
+  - Debug
+before_build:
+  - cmd: |
+      mkdir build
+      cd build
+      cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_EXAMPLE=ON
+build:
+  project: build\logger.sln
+  verbosity: minimal
+  parallel: true

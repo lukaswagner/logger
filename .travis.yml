@@ -1,0 +1,12 @@
+sudo: required
+dist: trusty
+language: minimal
+
+services:
+  - docker
+
+git:
+  submodules: false
+
+script:
+  - docker build .

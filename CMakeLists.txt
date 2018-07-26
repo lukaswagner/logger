@@ -69,6 +69,6 @@ if (${BUILD_EXAMPLE})
     set(VS_STARTUP_PROJECT example)
 endif()
 
-if(EXISTS ${CMAKE_SOURCE_DIR}/dependencies/cpp-style-settings)
+if(EXISTS ${CMAKE_SOURCE_DIR}/dependencies/cpp-style-settings/CMakeLists.txt)
     add_subdirectory(dependencies/cpp-style-settings EXCLUDE_FROM_ALL)
 endif()

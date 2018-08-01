@@ -8,6 +8,11 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# dependencies
+
+include(${CMAKE_SOURCE_DIR}/dependencies/DependencyStructure.cmake)
+setup_dependency_structure(${CMAKE_SOURCE_DIR}/dependencies)
+
 # sources
 
 set(source_dir src)
@@ -68,6 +73,19 @@ if (${BUILD_EXAMPLE})
     target_link_libraries(example logger)
     set(VS_STARTUP_PROJECT example)
 endif()
+
+# tests
+
+option(BUILD_TESTS "Build tests." OFF)
+
+if(${BUILD_TESTS})
+    find_package(GTest)
+    include_directories(${GTEST_ROOT}/include)
+    add_executable(tests test/test.cpp)
+    target_link_libraries(tests ${GTEST_BOTH_LIBRARIES} Threads::Threads)
+endif()
+
+# resharper style settings for VS
 
 if(EXISTS ${CMAKE_SOURCE_DIR}/dependencies/cpp-style-settings/CMakeLists.txt)
     add_subdirectory(dependencies/cpp-style-settings EXCLUDE_FROM_ALL)

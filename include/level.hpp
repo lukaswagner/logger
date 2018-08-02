@@ -21,7 +21,7 @@ namespace logger
         case Verbose:
             return "Vrb";
         case Debug:
-            return "Deb";
+            return "Dbg";
         case Info:
             return "Inf";
         case Warning:

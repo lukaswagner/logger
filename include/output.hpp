@@ -13,9 +13,13 @@ namespace logger
     public:
         // internal interface
 
-        Output(const Level & consoleLevel, const Level & fileLevel);
+        Output(const Level & consoleLevel, const Level & fileLevel, const std::string & logFileFormat);
         ~Output();
         void write(const Line & line) const;
+
+        Level consoleLevel() const;
+        Level fileLevel() const;
+        std::string file() const;
 
         // explicit defaults as requested by clang-tidy (cppcoreguidelines-special-member-functions)
 
@@ -27,6 +31,7 @@ namespace logger
     private:
         Level m_consoleLevel;
         Level m_fileLevel;
+        std::string m_file;
         std::shared_ptr<std::ofstream> m_stream;
     };
 }

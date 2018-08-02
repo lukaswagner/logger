@@ -1,10 +1,30 @@
-#include "../include/logger.hpp"
+#include "logger.hpp"
 
-#include "../include/globals.hpp"
+#include "globals.hpp"
 
-void logger::enable(const Level & consoleLevel, const Level & fileLevel)
+bool logger::enabled()
 {
-    g_output = std::make_shared<Output>(consoleLevel, fileLevel);
+    return g_enabled;
+}
+
+logger::Level logger::consoleLevel()
+{
+    return g_output->consoleLevel();
+}
+
+logger::Level logger::fileLevel()
+{
+    return g_output->fileLevel();
+}
+
+std::string logger::logFile()
+{
+    return g_output->file();
+}
+
+void logger::enable(const Level & consoleLevel, const Level & fileLevel, const std::string & logFileFormat)
+{
+    g_output = std::make_shared<Output>(consoleLevel, fileLevel, logFileFormat);
     g_enabled = true;
 }
 

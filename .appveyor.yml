@@ -5,10 +5,19 @@ configuration:
   - Debug
 before_build:
   - cmd: |
+      echo "*** Building dependencies ***"
+      cd dependencies
+      cmake . -G "Visual Studio 15 2017 Win64"
+      cd ..
+      echo "*** Running cmake ***"
       mkdir build
       cd build
-      cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_EXAMPLE=ON
+      cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON
 build:
   project: build\logger.sln
   verbosity: minimal
   parallel: true
+test_script:
+  - cmd: | 
+      echo "*** Running tests ***"
+      %CONFIGURATION%\tests.exe

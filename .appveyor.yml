@@ -7,7 +7,7 @@ before_build:
   - cmd: |
       echo "*** Building dependencies ***"
       cd dependencies
-      cmake .
+      cmake . -G "Visual Studio 15 2017 Win64"
       cd ..
       echo "*** Running cmake ***"
       mkdir build

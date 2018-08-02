@@ -12,9 +12,8 @@ WORKDIR /usr/src/build
 ADD . /usr/src/sources
 
 RUN echo "*** Building dependencies ***" \
-    && cd dependencies \
-    && cmake . \
-    && cd ..
+    && cd ../sources/dependencies \
+    && cmake .
 
 RUN echo "*** Running cmake ***" \
     && cmake ../sources -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON

@@ -20,4 +20,4 @@ build:
 test_script:
   - cmd: | 
       echo "*** Running tests ***"
-      build\%CONFIGURATION%\tests.exe    
+      build\$(configuration)\tests.exe    

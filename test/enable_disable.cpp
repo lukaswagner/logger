@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <cstdio>
 
 #include "gtest/gtest.h"
@@ -46,6 +47,10 @@ TEST(EnableAndDisable, FileLevel)
 
 TEST(EnableAndDisable, CatchFileError)
 {
+    // replace cerr buffer to hide expected error
+    auto cerr = std::ostringstream();
+    const auto buf = std::cerr.rdbuf(cerr.rdbuf());
+
     EXPECT_NO_THROW(logger::enable(logger::Info, logger::Info, ""));
     EXPECT_TRUE(logger::enabled());
     EXPECT_EQ(logger::consoleLevel(), logger::Info);
@@ -53,4 +58,6 @@ TEST(EnableAndDisable, CatchFileError)
 
     EXPECT_NO_THROW(logger::disable());
     EXPECT_FALSE(logger::enabled());
+
+    std::cerr.rdbuf(buf);
 }

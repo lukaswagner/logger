@@ -20,17 +20,4 @@ build:
 test_script:
   - cmd: | 
       echo "*** Running tests ***"
-      echo %cd%
-      dir
-      build\Release\tests.exe
-
-for:
-  -
-    matrix:
-      only:
-        - configuration: Debug
-    test_script:
-      - cmd: | 
-          echo "*** Running tests ***"
-          build\Debug\tests.exe 
-
+      %CONFIGURATION%\tests.exe

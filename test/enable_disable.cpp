@@ -6,8 +6,6 @@
 #include "logger.hpp"
 #include "fixtures.hpp"
 
-// enabling / disabling the logger
-
 TEST(EnableAndDisable, Default)
 {
     EXPECT_NO_THROW(logger::enable());

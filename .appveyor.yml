@@ -20,6 +20,8 @@ build:
 test_script:
   - cmd: | 
       echo "*** Running tests ***"
+      echo %cd%
+      dir
       build\Release\tests.exe
 
 for:

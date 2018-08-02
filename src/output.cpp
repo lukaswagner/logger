@@ -1,4 +1,4 @@
-#include "../include/output.hpp"
+#include "output.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #endif
 
-logger::Output::Output(const Level & consoleLevel, const Level & fileLevel)
+logger::Output::Output(const Level & consoleLevel, const Level & fileLevel, const std::string & logFileFormat)
     : m_consoleLevel(consoleLevel)
     , m_fileLevel(fileLevel)
     , m_stream(std::make_shared<std::ofstream>())
@@ -21,11 +21,12 @@ logger::Output::Output(const Level & consoleLevel, const Level & fileLevel)
 #else
         mkdir("log", 0700);
 #endif
-        m_stream->open(Line::currentTimeString("log/%Y-%m-%d-%H-%M-%S.txt"), std::ios::out | std::ios::trunc);
+        m_file = Line::currentTimeString(logFileFormat);
+        m_stream->open(m_file, std::ios::out | std::ios::trunc);
 
         if(!m_stream->is_open())
         {
-            std::cout << "Could not open log file." << std::endl;
+            std::cerr << "Could not open log file: " << m_file << std::endl;
             m_fileLevel = Off;
         }
     }
@@ -33,6 +34,7 @@ logger::Output::Output(const Level & consoleLevel, const Level & fileLevel)
 
 logger::Output::~Output()
 {
+    m_file = "";
     m_stream->close();
 }
 
@@ -50,4 +52,19 @@ void logger::Output::write(const Line & line) const
         *m_stream << string << std::endl;
         m_stream->flush();
     }
+}
+
+logger::Level logger::Output::consoleLevel() const
+{
+    return m_consoleLevel;
+}
+
+logger::Level logger::Output::fileLevel() const
+{
+    return m_fileLevel;
+}
+
+std::string logger::Output::file() const
+{
+    return m_file;
 }

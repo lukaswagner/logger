@@ -10,7 +10,12 @@ namespace logger
 {
     // public interface
 
-    void LOGGER_EXPORT enable(const Level & consoleLevel = Info, const Level & fileLevel = Off);
+    bool LOGGER_EXPORT enabled();
+    Level LOGGER_EXPORT consoleLevel();
+    Level LOGGER_EXPORT fileLevel();
+    std::string LOGGER_EXPORT logFile();
+
+    void LOGGER_EXPORT enable(const Level & consoleLevel = Info, const Level & fileLevel = Off, const std::string & logFileFormat = "log/%Y-%m-%d-%H-%M-%S.txt");
     void LOGGER_EXPORT disable();
 
     int LOGGER_EXPORT contextLength();

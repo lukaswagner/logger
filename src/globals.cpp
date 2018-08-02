@@ -1,4 +1,4 @@
-#include "../include/globals.hpp"
+#include "globals.hpp"
 
 bool logger::g_enabled = false;
 int logger::g_contextLength = 10;

@@ -5,6 +5,7 @@ RUN echo "*** Installing dependencies ***" \
     build-essential \
     cmake \
     git \
+    ca-certificates \
     && apt-get autoremove
 
 WORKDIR /usr/src/build

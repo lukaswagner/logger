@@ -20,4 +20,15 @@ build:
 test_script:
   - cmd: | 
       echo "*** Running tests ***"
-      build\$(configuration)\tests.exe    
+      build\Release\tests.exe
+
+for:
+  -
+    matrix:
+      only:
+        - configuration: Debug
+    test_script:
+      - cmd: | 
+          echo "*** Running tests ***"
+          build\Debug\tests.exe 
+

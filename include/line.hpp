@@ -2,6 +2,7 @@
 
 #include <string>
 #include <memory>
+#include <sstream>
 
 #include "level.hpp"
 #include "logger_export.hpp"
@@ -14,7 +15,13 @@ namespace logger
         // public interface
 
         LOGGER_EXPORT ~Line();
-        Line LOGGER_EXPORT & operator <<(const std::string & string);
+
+        template<class T>
+        Line & operator <<(T value)
+        {
+            *m_stream << value;
+            return *this;
+        }
 
         // internal interface
 

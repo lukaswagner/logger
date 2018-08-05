@@ -20,12 +20,6 @@ logger::Line::~Line()
     g_output->write(*this);
 }
 
-logger::Line & logger::Line::operator<<(const std::string & string)
-{
-    *m_stream << string;
-    return *this;
-}
-
 const logger::Level & logger::Line::level() const
 {
     return m_level;

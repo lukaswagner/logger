@@ -49,7 +49,19 @@ protected:
     std::string m_defaultTimeFormat;
 };
 
-class DataTypes : public BaseFixture { };
+class DataTypes : public BaseFixture
+{
+public:
+    template <class T> void checkDataType(T value, std::string string);
+};
+
+template <class T>
+void DataTypes::checkDataType(T value, const std::string string)
+{
+    logger::info() << value;
+    const auto coutRegex = contentRegex(string);
+    matchRegex(coutOutput(), coutRegex);
+}
 
 class File : public BaseFixture
 {

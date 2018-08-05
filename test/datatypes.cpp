@@ -104,3 +104,16 @@ TEST_F(DataTypes, StreamManipulators)
     const auto coutRegex = contentRegex("true 1");
     matchRegex(coutOutput(), coutRegex);
 }
+
+class CustomClass { };
+
+std::ostream& operator<<(std::ostream& stream, const CustomClass& object)
+{
+    return stream << "This is a custom stream output operator.";
+}
+
+TEST_F(DataTypes, CustomClass)
+{
+    const CustomClass value = CustomClass();
+    checkDataType(value, "This is a custom stream output operator.");
+}

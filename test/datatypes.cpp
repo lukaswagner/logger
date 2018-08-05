@@ -19,65 +19,17 @@ TEST_F(DataTypes, Bool)
     checkDataType(value, "1");
 }
 
-TEST_F(DataTypes, Char)
-{
-    const char value = 0xc0;
-    checkDataType(value, "\xc0");
-}
-
-TEST_F(DataTypes, UnsignedChar)
-{
-    const unsigned char value = 0xc0;
-    checkDataType(value, "\xc0");
-}
-
-TEST_F(DataTypes, Int)
-{
-    const int value = 4000000000;
-    checkDataType(value, "-294967296");
-}
-
-TEST_F(DataTypes, UnsignedInt)
-{
-    const unsigned int value = 4000000000;
-    checkDataType(value, "4000000000");
-}
-
-TEST_F(DataTypes, ShortInt)
-{
-    const short int value = 40000;
-    checkDataType(value, "-25536");
-}
-
-TEST_F(DataTypes, UnsignedShortInt)
-{
-    const unsigned short int value = 40000;
-    checkDataType(value, "40000");
-}
-
-TEST_F(DataTypes, LongInt)
-{
-    const long int value = 4000000000;
-    checkDataType(value, "-294967296");
-}
-
-TEST_F(DataTypes, UnsignedLongInt)
-{
-    const unsigned long int value = 4000000000;
-    checkDataType(value, "4000000000");
-}
-
-TEST_F(DataTypes, LongLongInt)
-{
-    const long long int value = 18000000000000000000;
-    checkDataType(value, "-446744073709551616");
-}
-
-TEST_F(DataTypes, UnsignedLongLongInt)
-{
-    const unsigned long long int value = 18000000000000000000;
-    checkDataType(value, "18000000000000000000");
-}
+#define INT_TEST(name, type) TEST_F(DataTypes, name){ checkInt<type>(); }
+INT_TEST(Char, char)
+INT_TEST(UnsignedChar, unsigned char)
+INT_TEST(Short, short)
+INT_TEST(UnsignedShort, unsigned short)
+INT_TEST(Int, int)
+INT_TEST(UnsignedInt, unsigned int)
+INT_TEST(Long, long)
+INT_TEST(UnsignedLong, unsigned long)
+INT_TEST(LongLong, long long)
+INT_TEST(UnsignedLongLong, unsigned long long)
 
 TEST_F(DataTypes, Float)
 {

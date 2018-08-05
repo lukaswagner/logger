@@ -1,23 +1,13 @@
 #include "gtest/gtest.h"
 #include "fixtures.hpp"
 
-TEST_F(DataTypes, String)
-{
-    const std::string value = "a string";
-    checkDataType(value, value);
-}
-
-TEST_F(DataTypes, CString)
-{
-    const char* value = "a string";
-    checkDataType(value, value);
-}
-
-TEST_F(DataTypes, Bool)
-{
-    const bool value = true;
-    checkDataType(value, "1");
-}
+#define TYPE_TEST(name, type, input, output) TEST_F(DataTypes, name){ const type value = input; checkDataType(value, output); }
+TYPE_TEST(String, std::string, "a string", "a string")
+TYPE_TEST(CString, char*, "a string", "a string")
+TYPE_TEST(Bool, bool, true, "1")
+TYPE_TEST(Float, float, 1.28, "1.28")
+TYPE_TEST(Double, double, 1.28, "1.28")
+TYPE_TEST(LongDouble, long double, 1.28, "1.28")
 
 #define INT_TEST(name, type) TEST_F(DataTypes, name){ checkInt<type>(); }
 INT_TEST(Char, char)
@@ -30,24 +20,6 @@ INT_TEST(Long, long)
 INT_TEST(UnsignedLong, unsigned long)
 INT_TEST(LongLong, long long)
 INT_TEST(UnsignedLongLong, unsigned long long)
-
-TEST_F(DataTypes, Float)
-{
-    const float value = 1.28;
-    checkDataType(value, "1.28");
-}
-
-TEST_F(DataTypes, Double)
-{
-    const double value = 1.28;
-    checkDataType(value, "1.28");
-}
-
-TEST_F(DataTypes, LongDouble)
-{
-    const long double value = 1.28;
-    checkDataType(value, "1.28");
-}
 
 TEST_F(DataTypes, StreamManipulators)
 {
@@ -64,8 +36,4 @@ std::ostream& operator<<(std::ostream& stream, const CustomClass& object)
     return stream << "This is a custom stream output operator.";
 }
 
-TEST_F(DataTypes, CustomClass)
-{
-    const CustomClass value = CustomClass();
-    checkDataType(value, "This is a custom stream output operator.");
-}
+TYPE_TEST(CustomClass, CustomClass, CustomClass(), "This is a custom stream output operator.")

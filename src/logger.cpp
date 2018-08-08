@@ -79,7 +79,7 @@ logger::Line logger::info(const std::string & context)
     return Line(Info, context);
 }
 
-logger::Line logger::warn(const std::string & context)
+logger::Line logger::warning(const std::string & context)
 {
     return Line(Warning, context);
 }

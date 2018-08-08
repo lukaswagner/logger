@@ -19,7 +19,7 @@ TEST_F(File, SameAsConsole)
 TEST_F(File, ContainsAllLevels)
 {
     logger::info() << "text1";
-    logger::warn() << "text2";
+    logger::warning() << "text2";
 
     const auto fileRegex = levelRegex("Inf") + levelRegex("Wrn");
     matchRegex(fileOutput(), fileRegex);

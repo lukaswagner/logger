@@ -28,6 +28,6 @@ namespace logger
     Line LOGGER_EXPORT verbose(const std::string & context = "");
     Line LOGGER_EXPORT debug(const std::string & context = "");
     Line LOGGER_EXPORT info(const std::string & context = "");
-    Line LOGGER_EXPORT warn(const std::string & context = "");
+    Line LOGGER_EXPORT warning(const std::string & context = "");
     Line LOGGER_EXPORT error(const std::string & context = "");
 }

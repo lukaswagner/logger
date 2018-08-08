@@ -9,7 +9,7 @@ TEST_F(Output, LevelTag)
     logger::verbose() << "text1";
     logger::debug() << "text2";
     logger::info() << "text3";
-    logger::warn() << "text4";
+    logger::warning() << "text4";
     logger::error() << "text5";
 
     const auto coutRegex = levelRegex("Vrb") + levelRegex("Dbg") + levelRegex("Inf");
@@ -48,7 +48,7 @@ TEST_F(Output, Content)
 TEST_F(Output, BothStreams)
 {
     logger::verbose() << "this is going into cout";
-    logger::warn() << "this is going into cerr";
+    logger::warning() << "this is going into cerr";
 
     const auto coutRegex = contentRegex(".*cout");
     matchRegex(coutOutput(), coutRegex);

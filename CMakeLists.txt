@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.9)
 
 # project settings
 
@@ -96,6 +96,18 @@ if(${BUILD_TESTS})
     include_directories(${GTEST_ROOT}/include)
     add_executable(tests ${test_headers} ${test_sources})
     target_link_libraries(tests ${GTEST_BOTH_LIBRARIES} Threads::Threads logger)
+endif()
+
+# documentation
+
+option(BUILD_DOCS "Generate documentation." OFF)
+
+if(${BUILD_DOCS})
+    find_package(Doxygen)
+    set(DOXYGEN_MACRO_EXPANSION YES)
+    set(DOXYGEN_EXPAND_ONLY_PREDEF YES)
+    set(DOXYGEN_PREDEFINED "LOGGER_EXPORT=")
+    doxygen_add_docs(docs ${public_headers})
 endif()
 
 # resharper style settings for VS

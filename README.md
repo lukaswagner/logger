@@ -21,6 +21,7 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
 You'll need
 * [CMake](https://cmake.org/) to generate build files.  
 * A C++14-compatible compiler, e.g. g++7 or VS 2017.
+* [Git](https://git-scm.com/) to automatically clone googletest.
 * [Doxygen](http://www.doxygen.org/) if you want to generate the documentation.
 
 ### Dependency Setup

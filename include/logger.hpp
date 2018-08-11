@@ -41,7 +41,7 @@ namespace logger
      * \brief Enables the logger with the given minimum \ref Level "Levels". Call again to change these settings. This results in a new log file being generated, if file logging is enabled.
      * \param consoleLevel Minimum ::Level for logging to console. Log messages with a lower ::Level won't be written to the console.
      * \param fileLevel Minimum ::Level for logging to file. Log messages with a lower ::Level won't be written to the log file.
-     * \param logFileFormat Naming scheme for log files.
+     * \param logFileFormat Naming scheme for log files, see https://en.cppreference.com/w/cpp/io/manip/put_time for syntax.
      */
     void LOGGER_EXPORT enable(const Level & consoleLevel = Info, const Level & fileLevel = Off, const std::string & logFileFormat = "log/%Y-%m-%d-%H-%M-%S.txt");
     /**

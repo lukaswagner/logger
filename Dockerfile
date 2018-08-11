@@ -6,6 +6,7 @@ RUN echo "*** Installing dependencies ***" \
     cmake \
     git \
     ca-certificates \
+    doxygen \
     && apt-get autoremove
 
 WORKDIR /usr/src/build
@@ -17,10 +18,11 @@ RUN echo "*** Building dependencies ***" \
     && cmake .
 
 RUN echo "*** Running cmake ***" \
-    && cmake ../sources -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON
+    && cmake ../sources -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON -DBUILD_DOCS=ON
 
 RUN echo "*** Building project ***" \
-    && make
+    && make \
+    && make docs
 
 RUN echo "*** Running tests ***" \
     && ./tests

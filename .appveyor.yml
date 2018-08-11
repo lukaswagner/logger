@@ -3,6 +3,8 @@ image:
 configuration:
   - Release
   - Debug
+install:
+  - cinst doxygen.install
 before_build:
   - cmd: |
       echo "*** Building dependencies ***"
@@ -12,11 +14,15 @@ before_build:
       echo "*** Running cmake ***"
       mkdir build
       cd build
-      cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON
+      cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON -DBUILD_DOCS=ON
 build:
   project: build\logger.sln
   verbosity: minimal
   parallel: true
+after_build:
+  - cmd: |
+      echo "*** Building docs ***"
+      msbuild docs.vcxproj /m /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
   - cmd: | 
       echo "*** Running tests ***"

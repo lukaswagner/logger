@@ -178,6 +178,6 @@ int main(int argc, char* argv[])
 ```
 
 ## Build Status
-|Branch      |Linux     |Windows   |
+|Branch      |[Linux](https://travis-ci.com/lukaswagner/logger) |[Windows](https://ci.appveyor.com/project/lukaswagner/logger/branch/master) |
 |------------|----------|----------|
-|master      | [![Build Status](https://travis-ci.com/lukaswagner/logger.svg?branch=master)](https://travis-ci.com/lukaswagner/logger) | [![Build status](https://ci.appveyor.com/api/projects/status/lvb82mnhslxd65k6/branch/master?svg=true)](https://ci.appveyor.com/project/lukaswagner/logger/branch/master) |
+|master      | ![Build Status](https://travis-ci.com/lukaswagner/logger.svg?branch=master) | ![Build status](https://ci.appveyor.com/api/projects/status/lvb82mnhslxd65k6/branch/master?svg=true) |

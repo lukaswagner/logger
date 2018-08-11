@@ -3,16 +3,16 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
 
 ## Contents
 
-1. [Setup](##Setup)
-    1. [Basic Dependencies](###Basic%20Dependencies)  
-    2. [Dependency Setup](###Dependency%20Setup)
-    3. [Building the Project](###Building%20the%20Project)
-2. [Usage](##Usage)  
-    1. [Enabling the Logger](###Enabling%20the%20Logger)  
-    2. [Creating Output](###Creating%20Output)  
-    3. [Further Customization](###Further%20Customization)  
-    4. [Complete Example](###Complete%20Example)
-3. [Build Status](##Build%20Status)
+1. [Setup](#setup)
+    1. [Basic Dependencies](#basic-dependencies)  
+    2. [Dependency Setup](#dependency-setup)
+    3. [Building the Project](#building-the-project)
+2. [Usage](#usage)  
+    1. [Enabling the Logger](#enabling-the-logger)  
+    2. [Creating Output](#creating-output)  
+    3. [Further Customization](#further-customization)  
+    4. [Complete Example](#complete-example)
+3. [Build Status](#build-status)
 
 ## Setup
 

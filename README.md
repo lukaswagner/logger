@@ -135,13 +135,7 @@ std::ostream& operator<<(std::ostream& stream, const CustomClass& object)
 int main(int argc, char* argv[])
 {
     // enable the logger, only show messages with level >= Info and disable file output completely
-    logger::enable(logger::Info, logger::Info);
-
-    logger::info("Time test") << "Default time format is %H:%M:%S.";
-    logger::setTimeFormat("%H:%M");
-    logger::info("Time test") << "Now the seconds are hidden.";
-    logger::setPrintTime(false);
-    logger::info("Time test") << "And now the time is omitted.";
+    logger::enable(logger::Info, logger::Off);
 
     // let's disable the time output during the setup
     logger::setPrintTime(false);

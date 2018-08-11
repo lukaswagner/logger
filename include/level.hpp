@@ -10,23 +10,23 @@ namespace logger
     enum Level
     {
         /**
-         * \brief Used for low-level debugging information.
+         * \brief Used for low-level debugging information. When logging to console, messages with this level will be sent to cout.
          */
         Verbose,
         /**
-         * \brief Used for debugging information.
+         * \brief Used for debugging information. When logging to console, messages with this level will be sent to cout.
          */
         Debug,
         /**
-         * \brief Used for important information.
+         * \brief Used for important information. When logging to console, messages with this level will be sent to cout.
          */
         Info,
         /**
-         * \brief Used for logging non-critical problems.
+         * \brief Used for logging non-critical problems. When logging to console, messages with this level will be sent to cerr.
          */
         Warning,
         /**
-         * \brief Used for logging critical problems.
+         * \brief Used for logging critical problems. When logging to console, messages with this level will be sent to cerr.
          */
         Error,
         /**

@@ -81,31 +81,31 @@ namespace logger
     void LOGGER_EXPORT setTimeFormat(const std::string & timeFormat);
 
     /**
-     * \brief Creates a new Line object with the ::Level ::Verbose. Once this object is destroyed, the content will be sent to the outputs.
+     * \brief Creates a new Line object with the ::Level ::Verbose. Once this object is destroyed, the content will be sent to the outputs. When logging to console, messages with this level will be sent to cout.
      * \param context The context in which the message is logged, allowing for more informative output. This could be the current function, for example.
      * \return A Line object, used for piping content.
      */
     Line LOGGER_EXPORT verbose(const std::string & context = "");
     /**
-    * \brief Creates a new Line object with the ::Level ::Debug. Once this object is destroyed, the content will be sent to the outputs.
+    * \brief Creates a new Line object with the ::Level ::Debug. Once this object is destroyed, the content will be sent to the outputs. When logging to console, messages with this level will be sent to cout.
     * \param context The context in which the message is logged, allowing for more informative output. This could be the current function, for example.
     * \return A Line object, used for piping content.
     */
     Line LOGGER_EXPORT debug(const std::string & context = "");
     /**
-    * \brief Creates a new Line object with the ::Level ::Info. Once this object is destroyed, the content will be sent to the outputs.
+    * \brief Creates a new Line object with the ::Level ::Info. Once this object is destroyed, the content will be sent to the outputs. When logging to console, messages with this level will be sent to cout.
     * \param context The context in which the message is logged, allowing for more informative output. This could be the current function, for example.
     * \return A Line object, used for piping content.
     */
     Line LOGGER_EXPORT info(const std::string & context = "");
     /**
-    * \brief Creates a new Line object with the ::Level ::Info. Once this object is destroyed, the content will be sent to the outputs.
+    * \brief Creates a new Line object with the ::Level ::Info. Once this object is destroyed, the content will be sent to the outputs. When logging to console, messages with this level will be sent to cerr.
     * \param context The context in which the message is logged, allowing for more informative output. This could be the current function, for example.
     * \return A Line object, used for piping content.
     */
     Line LOGGER_EXPORT warning(const std::string & context = "");
     /**
-    * \brief Creates a new Line object with the ::Level ::Error. Once this object is destroyed, the content will be sent to the outputs.
+    * \brief Creates a new Line object with the ::Level ::Error. Once this object is destroyed, the content will be sent to the outputs. When logging to console, messages with this level will be sent to cerr.
     * \param context The context in which the message is logged, allowing for more informative output. This could be the current function, for example.
     * \return A Line object, used for piping content.
     */

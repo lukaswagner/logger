@@ -1,7 +1,6 @@
 FROM ubuntu
 
-RUN echo "*** Installing dependencies ***" \
-    && apt-get -y update && apt-get install -y --no-install-recommends \
+RUN apt-get -y update && apt-get install -y --no-install-recommends \
     build-essential \
     cmake \
     git \

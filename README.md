@@ -1,5 +1,5 @@
 # logger
-Multi-level logger for C++. Supports logging to both console and file. Based on logger from [cginternals/cppassist](https://github.com/cginternals/cppassist).
+Multi-level logger for C++. Supports logging to both console and file. Based on logger from [cginternals/cppassist](https://github.com/cginternals/cppassist). The documentation can be found [here](https://lukaswagner.github.io/logger/).
 
 ## Contents
 

@@ -1,3 +1,6 @@
-table.doxtable th a, table.doxtable th a:visited {
+table.doxtable th a,
+table.doxtable th a:visited,
+th.markdownTableHeadNone a,
+th.markdownTableHeadNone a:visited {
     color: #ffffff
 }

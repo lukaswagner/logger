@@ -9,7 +9,7 @@ environment:
 install:
   - cinst doxygen.install
   - ps: iex ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
-  - cmd: appveyor-tools\secure-file -decrypt docs_deploy_key.enc -secret %docs_deploy_secret%
+  - ps: if("$env:docs_deploy_secret" -ne ""){ & appveyor-tools\secure-file -decrypt docs_deploy_key.enc -secret $env:docs_deploy_secret }
 before_build:
   - cmd: |
       cd dependencies

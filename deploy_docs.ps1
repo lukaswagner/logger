@@ -1,8 +1,22 @@
 # stop script execution if error occurs
 $ErrorActionPreference = "Stop"
 
+# check branch - only deploy docs when master is updated
+if ($env:APPVEYOR_REPO_BRANCH -ne 'master')
+{
+    Write-Output("Currently building on branch $env:APPVEYOR_REPO_BRANCH. Docs will only be deployed when building commits on master.")
+    exit
+}
+
 # add deploy key
 $docs_deploy_key = Join-Path ($env:APPVEYOR_BUILD_FOLDER) 'docs_deploy_key'
+
+# if the key file doesn't exist, we can't deploy - this usually means a PR is being build
+if(-Not (Test-Path $docs_deploy_key))
+{
+    Write-Output("Deploy key could not be found. This probably means this is a PR build. Skipping docs deployment.")
+    exit
+}
 
 # don't ask to add the fingerprint on clone
 $configFile = "$env:USERPROFILE\.ssh\config"

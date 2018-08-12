@@ -2,8 +2,7 @@
 $ErrorActionPreference = "Stop"
 
 # add deploy key
-$docs_deploy_key = Join-Path (Get-Location) 'docs_deploy_key'
-Add-Content -Path $docs_deploy_key -Value $env:docs_deploy_key
+$docs_deploy_key = Join-Path ($env:APPVEYOR_BUILD_FOLDER) 'docs_deploy_key'
 
 # don't ask to add the fingerprint on clone
 $configFile = "$env:USERPROFILE\.ssh\config"

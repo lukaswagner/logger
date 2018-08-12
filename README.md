@@ -4,13 +4,13 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
 ## Contents
 
 1. [Setup](#setup)
-    1. [Basic Dependencies](#basic-dependencies)  
+    1. [Basic Dependencies](#basic-dependencies)
     2. [Dependency Setup](#dependency-setup)
     3. [Building the Project](#building-the-project)
-2. [Usage](#usage)  
-    1. [Enabling the Logger](#enabling-the-logger)  
-    2. [Creating Output](#creating-output)  
-    3. [Further Customization](#further-customization)  
+2. [Usage](#usage)
+    1. [Enabling the Logger](#enabling-the-logger)
+    2. [Creating Output](#creating-output)
+    3. [Further Customization](#further-customization)
     4. [Complete Example](#complete-example)
 3. [Build Status](#build-status)
 
@@ -19,7 +19,7 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
 ### Basic Dependencies
 
 You'll need
-* [CMake](https://cmake.org/) to generate build files.  
+* [CMake](https://cmake.org/) to generate build files.
 * A C++14-compatible compiler, e.g. g++7 or VS 2017.
 * [Git](https://git-scm.com/) to automatically clone googletest.
 * [Doxygen](http://www.doxygen.org/) if you want to generate the documentation.

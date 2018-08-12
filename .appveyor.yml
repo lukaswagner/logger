@@ -32,6 +32,9 @@ for:
   matrix:
     only:
       - configuration: Release
+  branches:
+    only:
+      - master
 
   deploy_script:
     - cmd: powershell -File ..\deploy_docs.ps1

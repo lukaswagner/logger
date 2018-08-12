@@ -32,4 +32,4 @@ for:
       - configuration: Release
 
   deploy_script:
-    - ps: ..\deploy_docs.ps1
+    - cmd: powershell -File ..\deploy_docs.ps1

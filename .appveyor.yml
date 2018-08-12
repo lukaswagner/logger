@@ -31,5 +31,5 @@ for:
     only:
       - configuration: Release
 
-  deploy-script:
+  deploy_script:
     - ps: ..\deploy_docs.ps1

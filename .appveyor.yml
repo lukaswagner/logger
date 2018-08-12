@@ -23,7 +23,7 @@ build:
 after_build:
   - cmd: msbuild docs.vcxproj /m /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
-  - cmd: %CONFIGURATION%\tests.exe
+  - cmd: .\%CONFIGURATION%\tests.exe
 
 for:
 -

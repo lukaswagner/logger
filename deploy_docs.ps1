@@ -1,8 +1,15 @@
+# stop script execution if error occurs
 $ErrorActionPreference = "Stop"
+
+# make sure this isn't logged
+Set-PSDebug -Trace 0
 
 # add deploy key
 $docs_deploy_key = Join-Path (Get-Location) 'docs_deploy_key'
 Add-Content -Path $docs_deploy_key -Value $env:docs_deploy_key
+
+# now trace can be re-enabled
+Set-PSDebug -Trace 1
 
 # don't ask to add the fingerprint on clone
 $configFile = "$env:USERPROFILE\.ssh\config"

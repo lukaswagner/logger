@@ -1,7 +1,6 @@
 FROM ubuntu
 
-RUN echo "*** Installing dependencies ***" \
-    && apt-get -y update && apt-get install -y --no-install-recommends \
+RUN apt-get -y update && apt-get install -y --no-install-recommends \
     build-essential \
     cmake \
     git \
@@ -12,15 +11,10 @@ WORKDIR /usr/src/build
 
 ADD . /usr/src/sources
 
-RUN echo "*** Building dependencies ***" \
-    && cd ../sources/dependencies \
-    && cmake .
+RUN cd ../sources/dependencies && cmake .
 
-RUN echo "*** Running cmake ***" \
-    && cmake ../sources -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON
+RUN cmake ../sources -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON
 
-RUN echo "*** Building project ***" \
-    && make
+RUN make
 
-RUN echo "*** Running tests ***" \
-    && ./tests
+RUN ./tests

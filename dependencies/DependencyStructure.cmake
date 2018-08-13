@@ -16,7 +16,11 @@ macro(setup_dependency_structure dependency_base_dir)
 
     # googletest
 
-    setup_dependency_dirs(googletest)
-    set(GTEST_ROOT ${googletest_install_dir})
+    if(NOT GTEST_ROOT)
+        setup_dependency_dirs(googletest)
+        set(GTEST_ROOT ${googletest_install_dir})
+    else()
+        message(STATUS "Using externally defined GTEST_ROOT: ${GTEST_ROOT}")
+    endif()
 
 endmacro()

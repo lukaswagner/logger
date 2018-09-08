@@ -130,3 +130,5 @@ Parameter::~Parameter()
 }
 
 File::File() : BaseFixture(logger::Info, logger::Info) { }
+
+Macros::Macros() : BaseFixture(logger::Debug, logger::Off) { }

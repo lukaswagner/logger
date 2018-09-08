@@ -51,6 +51,7 @@ set(test_sources
     ${test_dir}/enable_disable.cpp
     ${test_dir}/file.cpp
     ${test_dir}/fixtures.cpp
+    ${test_dir}/macros.cpp
     ${test_dir}/output.cpp
     ${test_dir}/parameters.cpp)
 

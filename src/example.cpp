@@ -1,4 +1,6 @@
 #include "logger.hpp"
+#include "macros.hpp"
+#include "../test/fixtures.hpp"
 
 // create a custom class to showcase operator overloading
 class CustomClass
@@ -46,4 +48,14 @@ int main(int argc, char* argv[])
     // warnings and errors are redirected to cerr instead of cout
     if (customObject.m_memberVar > 1337)
         logger::warning("Input parsing") << "Invalid input - " << customObject;
+
+    // enable logging of debug messages
+    logger::enable(logger::Debug);
+
+    // log and execute line
+    DEBUG_EXPR(auto a = 3;)
+
+    // log value name and evaluation result
+    DEBUG_VAL(a)
+    DEBUG_VAL(a * a)
 }

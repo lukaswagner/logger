@@ -27,6 +27,7 @@ set(public_headers
     ${include_dir}/level.hpp
     ${include_dir}/line.hpp
     ${include_dir}/logger.hpp
+    ${include_dir}/macros.hpp
     ${export_header})
 
 set(private_headers

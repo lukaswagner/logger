@@ -1,3 +1,9 @@
+/**\file line.hpp
+ * \brief Line class
+ * 
+ * This header contains the Line class, used for building log messages.
+ */
+
 #pragma once
 
 #include <string>

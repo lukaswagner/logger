@@ -1,3 +1,9 @@
+/**\file level.hpp
+ * \brief Log levels
+ * 
+ * This header contains the available log levels for filtering log messages.
+ */
+
 #pragma once
 
 #include <string>

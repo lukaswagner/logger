@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>logger: include Directory Reference</title>
+<title>logger: include/level.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,27 +66,45 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">include Directory Reference</div>  </div>
+<div class="title">level.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Log levels.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+</div>
+<p><a href="level_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:level_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8hpp.html">level.hpp</a> <a href="level_8hpp_source.html">[code]</a></td></tr>
-<tr class="memdesc:level_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log levels. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacelogger"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html">logger</a></td></tr>
+<tr class="memdesc:namespacelogger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger namespace. Contains all available functions and classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:line_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="line_8hpp.html">line.hpp</a> <a href="line_8hpp_source.html">[code]</a></td></tr>
-<tr class="memdesc:line_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Line class. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:logger_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8hpp.html">logger.hpp</a> <a href="logger_8hpp_source.html">[code]</a></td></tr>
-<tr class="memdesc:logger_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaces for logging and logger management. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:macros_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macros_8hpp.html">macros.hpp</a> <a href="macros_8hpp_source.html">[code]</a></td></tr>
-<tr class="memdesc:macros_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debugging macros. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a04a32b05c998cdc0aaa39274d1db03cf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cf">logger::Level</a> { <br />
+&#160;&#160;<a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfae9d2eb3599c2a1728219baa52ff9de34">logger::Verbose</a>, 
+<a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfab6aa2dd2749878341b0414ff0cad8ecb">logger::Debug</a>, 
+<a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfacde53c40e7aa44727cd70cb1f397e123">logger::Info</a>, 
+<a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfa0c17b03255487afdbc27cd2be516a9e2">logger::Warning</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfaf7dca9cfca5f295eb075947166e84938">logger::Error</a>, 
+<a class="el" href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfa01f84b904300faae6e4d6b51f0ff5ed4">logger::Off</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a04a32b05c998cdc0aaa39274d1db03cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Levels for filtering messages based on importance.  <a href="namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cf">More...</a><br /></td></tr>
+<tr class="separator:a04a32b05c998cdc0aaa39274d1db03cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Log levels. </p>
+<p>This header contains the available log levels for filtering log messages. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

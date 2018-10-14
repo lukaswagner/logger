@@ -1,4 +1,4 @@
-/**
+/**\file logger.hpp
  * \brief Interfaces for logging and logger management
  * 
  * This header contains the main interfaces used for enabling/disabling/configuring the logger and for logging content.
@@ -12,6 +12,9 @@
 #include "logger_export.hpp"
 #include "output.hpp"
 
+/**
+ * \brief Logger namespace. Contains all available functions and classes.
+ */
 namespace logger
 {
     // public interface

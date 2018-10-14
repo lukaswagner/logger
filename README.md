@@ -22,7 +22,7 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
 You'll need
 * [CMake](https://cmake.org/) to generate build files.
 * A C++14-compatible compiler, e.g. g++7 or VS 2017.
-* [Git](https://git-scm.com/) to automatically clone googletest.
+* [Git](https://git-scm.com/) to automatically clone googletest if you want to build the tests.
 * [Doxygen](http://www.doxygen.org/) if you want to generate the documentation.
 
 ### Dependency Setup
@@ -57,23 +57,23 @@ Afterwards, you can build the project. Just open the `.sln` in Visual Studio and
 
 ### Enabling the Logger
 
-Enable the logger by calling `enable()` with the appropriate levels. Let's say you want to show only the important logs in the console to maintain a cleaner output, but write all messages to the file in case you need to debug your application:
+Enable the logger by calling `enable()` with the appropriate levels. Let's say you want to show only the important logs in the console to maintain a cleaner output, but write all messages to a log file in case you need to debug your application:
 ```cpp
 logger::enable(logger::Info, logger::Verbose);
 ```
-Only messages with the level Info or higher will be visible in the console, while everything (Verbose is the lowest level) will be written to the log file when setting up the logger like this.
+Only messages with the level `Info` or higher will be visible in the console, while everything (`Verbose` is the lowest level) will be written to the log file when setting up the logger like this.
 
 ### Creating Output
 
-Use the functions resembling the log levels to obtain a line object. You can use this to pipe content as if it were a std::ostream.
+Use the functions resembling the log levels to obtain a line object. You can use this to pipe content as if it were a `std::ostream`.
 ```cpp
 logger::info() << "a string: " << anInt;
 ```
 Once the line object gets destroyed, all content piped into it is concatenated with the message header and sent to the outputs.
 
-Note: Message with the levels Verbose, Debug and Info are sent to `stdout`, while message with the levels Warning and Error are sent to `stderr`.
+Note: Message with the levels `Verbose`, `Debug` and `Info` are sent to `stdout`, while message with the levels `Warning` and `Error` are sent to `stderr`.
 
-Since the `<<` operator is implemented using a template, you can print everything you can send to an ostream. If you provide your own `std::ostream& operator<<` overload, you can even print your custom classes (see example.cpp for an example).
+Since the `<<` operator is implemented using a template, you can print everything you can send to an `std::ostream`. If you provide your own `std::ostream& operator<<` overload, you can even print your custom classes (see the [Complete Example](#complete-example) for an example).
 
 Additionally, you can pass a context to the log functions. You can use this to provide a better structured output. For example, calling
 ```cpp
@@ -112,7 +112,7 @@ Output:
 [Inf] [19:47] Time test : Now the seconds are hidden.
 [Inf] Time test : And now the time is omitted.
 ```
-The same time syntax is used for naming the generated log file. By default, `log/%Y-%m-%d-%H-%M-%S.txt` is used - resulting in a file like `2018-08-11-20-00-10.txt` being created in the subdirectory `log`. You can customize this by passing a string cointaining the desired format to `enable()`.
+The same time syntax is used for naming the generated log file. By default, `log/%Y-%m-%d-%H-%M-%S.txt` is used - resulting in a file like `2018-08-11-20-00-10.txt` being created in the subdirectory `log`. You can customize this by passing a string containing the desired format to `enable()`.
 
 ### Debug Macros
 
@@ -141,7 +141,7 @@ Output:
 
 ### Complete Example
 
-This example is take from the example application.
+This example is taken from the example application.
 
 ```cpp
 #include "logger.hpp"

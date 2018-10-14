@@ -27,6 +27,7 @@ set(public_headers
     ${include_dir}/level.hpp
     ${include_dir}/line.hpp
     ${include_dir}/logger.hpp
+    ${include_dir}/macros.hpp
     ${export_header})
 
 set(private_headers
@@ -50,6 +51,7 @@ set(test_sources
     ${test_dir}/enable_disable.cpp
     ${test_dir}/file.cpp
     ${test_dir}/fixtures.cpp
+    ${test_dir}/macros.cpp
     ${test_dir}/output.cpp
     ${test_dir}/parameters.cpp)
 

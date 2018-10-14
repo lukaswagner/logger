@@ -93,3 +93,9 @@ class File : public BaseFixture
 public:
     File();
 };
+
+class Macros : public BaseFixture
+{
+public:
+    Macros();
+};

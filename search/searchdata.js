@@ -1,12 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "cdefilopstvw~",
+  0: "cdefilmopstvw~",
   1: "l",
   2: "l",
-  3: "cdefilopstvw~",
-  4: "l",
-  5: "deiovw",
-  6: "l"
+  3: "m",
+  4: "cdefilopstvw~",
+  5: "l",
+  6: "deiovw",
+  7: "d",
+  8: "l"
 };
 
 var indexSectionNames =
@@ -14,10 +16,12 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "namespaces",
-  3: "functions",
-  4: "enums",
-  5: "enumvalues",
-  6: "pages"
+  3: "files",
+  4: "functions",
+  5: "enums",
+  6: "enumvalues",
+  7: "defines",
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -25,9 +29,11 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Namespaces",
-  3: "Functions",
-  4: "Enumerations",
-  5: "Enumerator",
-  6: "Pages"
+  3: "Files",
+  4: "Functions",
+  5: "Enumerations",
+  6: "Enumerator",
+  7: "Macros",
+  8: "Pages"
 };
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning',['Warning',['../namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfa0c17b03255487afdbc27cd2be516a9e2',1,'logger::Warning()'],['../namespacelogger.html#a195389ced3d6da20299f23804b06e342',1,'logger::warning(const std::string &amp;context=&quot;&quot;)']]]
+  ['verbose',['verbose',['../namespacelogger.html#a286b1683371f9ae7ee359bec3bfa370e',1,'logger::verbose(const std::string &amp;context=&quot;&quot;)'],['../namespacelogger.html#a04a32b05c998cdc0aaa39274d1db03cfae9d2eb3599c2a1728219baa52ff9de34',1,'logger::Verbose()']]]
 ];

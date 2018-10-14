@@ -1,6 +1,5 @@
 #include "logger.hpp"
 #include "macros.hpp"
-#include "../test/fixtures.hpp"
 
 // create a custom class to showcase operator overloading
 class CustomClass

@@ -11,6 +11,7 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
     1. [Enabling the Logger](#enabling-the-logger)
     2. [Creating Output](#creating-output)
     3. [Further Customization](#further-customization)
+    3. [Debug Macros](#debug-macros)
     4. [Complete Example](#complete-example)
 3. [Build Status](#build-status)
 
@@ -113,6 +114,31 @@ Output:
 ```
 The same time syntax is used for naming the generated log file. By default, `log/%Y-%m-%d-%H-%M-%S.txt` is used - resulting in a file like `2018-08-11-20-00-10.txt` being created in the subdirectory `log`. You can customize this by passing a string cointaining the desired format to `enable()`.
 
+### Debug Macros
+
+The proper way of debugging a program is by using a debugger. But we both know you don't do this, and instead add a log to every line of code to track the progress. Don't despair, this logger comes with macros to encourage this bad behaviour. These are defined in `macros.hpp`.
+
+`DEBUG_EXPR` can be used to log an expression before running it. Example usage:
+```
+DEBUG_EXPR(std::cout << "test" << std::endl;)
+```
+Output:
+```
+[Dbg] [14:30:52] DEBUG_EXPR     : std::cout << "test" << std::endl; (c:\users\lukas\documents\codekram\cpp\logger\src\example.cpp:56)
+test
+```
+
+`DEBUG_VAL` can be used to debug a value. This evaluates a variable or exression, and logs both the expression and its value. Example usage:
+```
+DEBUG_VAL(a)
+DEBUG_VAL(a * a)
+```
+Output:
+```
+[Dbg] [14:30:52] DEBUG_VAL      : a = 3
+[Dbg] [14:30:52] DEBUG_VAL      : a * a = 9
+```
+
 ### Complete Example
 
 This example is take from the example application.
@@ -166,12 +192,25 @@ int main(int argc, char* argv[])
     // warnings and errors are redirected to cerr instead of cout
     if (customObject.m_memberVar > 1337)
         logger::warning("Input parsing") << "Invalid input - " << customObject;
+
+    // enable logging of debug messages
+    logger::enable(logger::Debug);
+
+    // log and execute line
+    DEBUG_EXPR(auto a = 3;)
+
+    // log value name and evaluation result
+    DEBUG_VAL(a)
+    DEBUG_VAL(a * a)
 }
 ```
 `stdout` output:
 ```
 [Inf] Setup          : Loading config...
 [Inf] Setup          : Successfully loaded config.
+[Dbg] [19:25:48] DEBUG_EXPR     : auto a = 3; (c:\users\lukas\documents\codekram\cpp\logger\src\example.cpp:55)
+[Dbg] [19:25:48] DEBUG_VAL      : a = 3
+[Dbg] [19:25:48] DEBUG_VAL      : a * a = 9
 ```
 `stderr` output:
 ```

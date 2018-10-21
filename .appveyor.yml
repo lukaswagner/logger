@@ -15,5 +15,5 @@ build_script:
   - ps: appveyor/BuildScript.ps1
 test_script:
   - ps: appveyor/TestScript.ps1
-deploy_scripts:
-  - ps: appveyor/DeployScripts.ps1
+deploy_script:
+  - ps: appveyor/DeployScript.ps1

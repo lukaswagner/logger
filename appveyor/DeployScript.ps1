@@ -8,6 +8,18 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master')
     exit
 }
 
+# check OS and configuration - make sure docs are only deployed once
+if($isLinux)
+{
+    Write-Output("Currently running on Linux. Docs will only be deployed when building on Windows.")
+    exit
+}
+if($env:CONFIGURATION -eq 'Debug')
+{
+    Write-Output("Active configuration is Debug. Docs will only be deployed when building Release.")
+}
+Write-Output("Running on Windows on branch $env:APPVEYOR_REPO_BRANCH. Configuration is $env:CONFIGURATION. Deploying docs.")
+
 # add deploy key
 $docs_deploy_key = Join-Path ($env:APPVEYOR_BUILD_FOLDER) 'docs_deploy_key'
 

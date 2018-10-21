@@ -1,5 +1,6 @@
 image:
   - Visual Studio 2017
+  - Ubuntu
 configuration:
   - Release
   - Debug
@@ -7,31 +8,12 @@ environment:
   docs_deploy_secret:
     secure: 6Xz1lO3ZQLcnQhU9lpG+LbLkz2mtMLlS9Ro8LyBM8Xk=
 install:
-  - cinst doxygen.install
-  - ps: iex ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
-  - ps: if("$env:docs_deploy_secret" -ne ""){ & appveyor-tools\secure-file -decrypt docs_deploy_key.enc -secret $env:docs_deploy_secret }
+  - ps: appveyor/Install.ps1
 before_build:
-  - cmd: |
-      cd dependencies
-      cmake . -G "Visual Studio 15 2017 Win64"
-      cd ..
-      mkdir build
-      cd build
-      cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON -DBUILD_DOCS=ON
-build:
-  project: build\logger.sln
-  verbosity: minimal
-  parallel: true
-after_build:
-  - cmd: msbuild docs.vcxproj /m /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+  - ps: appveyor/BeforeBuild.ps1
+build_script:
+  - ps: appveyor/BuildScript.ps1
 test_script:
-  - cmd: .\%CONFIGURATION%\tests.exe
-
-for:
--
-  matrix:
-    only:
-      - configuration: Release
-
-  deploy_script:
-    - cmd: powershell -File ..\deploy_docs.ps1
+  - ps: appveyor/TestScript.ps1
+deploy_scripts:
+  - ps: appveyor/DeployScripts.ps1

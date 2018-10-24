@@ -110,8 +110,7 @@ if(${BUILD_DOCS})
     set(DOXYGEN_EXPAND_ONLY_PREDEF YES)
     set(DOXYGEN_PREDEFINED "LOGGER_EXPORT=")
     set(DOXYGEN_USE_MDFILE_AS_MAINPAGE "README.md")
-    set(DOXYGEN_HTML_EXTRA_STYLESHEET "doxygen_fixes.css")
-    doxygen_add_docs(docs ${public_headers} ${CMAKE_SOURCE_DIR}/README.md ${CMAKE_SOURCE_DIR}/doxygen_fixes.css)
+    doxygen_add_docs(docs ${public_headers} ${CMAKE_SOURCE_DIR}/README.md)
 endif()
 
 # resharper style settings for VS

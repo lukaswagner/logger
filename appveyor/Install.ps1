@@ -11,7 +11,7 @@ if($isWindows)
     if("$env:docs_deploy_secret" -ne "")
     {
         Invoke-Expression ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
-        & appveyor-tools/secure-file -decrypt docs_deploy_key.enc -secret $env:docs_deploy_secret
+        & appveyor-tools/secure-file -decrypt appveyor/DocsDeployKey.enc -secret $env:docs_deploy_secret
     }
     # install doxygen using chocolatey
     & cinst doxygen.install

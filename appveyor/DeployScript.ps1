@@ -21,10 +21,10 @@ if($env:CONFIGURATION -eq 'Debug')
 Write-Output("Running on Windows on branch $env:APPVEYOR_REPO_BRANCH. Configuration is $env:CONFIGURATION. Deploying docs.")
 
 # add deploy key
-$docs_deploy_key = Join-Path ($env:APPVEYOR_BUILD_FOLDER) 'docs_deploy_key'
+$docsDeployKey = Join-Path ($env:APPVEYOR_BUILD_FOLDER) 'appveyor/DocsDeployKey'
 
 # if the key file doesn't exist, we can't deploy - this usually means a PR is being build
-if(-Not (Test-Path $docs_deploy_key))
+if(-Not (Test-Path $docsDeployKey))
 {
     Write-Output("Deploy key could not be found. This probably means this is a PR build. Skipping docs deployment.")
     exit
@@ -32,7 +32,7 @@ if(-Not (Test-Path $docs_deploy_key))
 
 # don't ask to add the fingerprint on clone
 $configFile = "$env:USERPROFILE\.ssh\config"
-$configContent = "Host github.com`n`tStrictHostKeyChecking no`n`tIdentityFile $docs_deploy_key`n"
+$configContent = "Host github.com`n`tStrictHostKeyChecking no`n`tIdentityFile $docsDeployKey`n"
 Add-Content -Path $configFile -Value $configContent
 
 # clone gh-pages branch

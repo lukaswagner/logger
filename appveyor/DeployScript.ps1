@@ -17,6 +17,7 @@ if($isLinux)
 if($env:CONFIGURATION -eq 'Debug')
 {
     Write-Output("Active configuration is Debug. Docs will only be deployed when building Release.")
+    exit
 }
 Write-Output("Running on Windows on branch $env:APPVEYOR_REPO_BRANCH. Configuration is $env:CONFIGURATION. Deploying docs.")
 
@@ -39,7 +40,7 @@ Add-Content -Path $configFile -Value $configContent
 $branch = 'gh-pages'
 $repoUri = 'git@github.com:lukaswagner/logger.git'
 $cloneDir = 'gh-pages'
-& git clone -b $branch $repoUri $cloneDir
+& git clone -b $branch $repoUri $cloneDir 2>&1
 
 # clean gh-pages dir
 Set-Location $cloneDir

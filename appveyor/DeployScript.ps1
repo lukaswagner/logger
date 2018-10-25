@@ -62,4 +62,7 @@ Copy-Item $docsDir\* -Recurse
 # commit and push
 & git add --all
 & git commit -m "Updated docs based on commit: $env:APPVEYOR_REPO_COMMIT" -m "Original commit message: $env:APPVEYOR_REPO_COMMIT_MESSAGE"
+# git doens't properly work together with ErrorActionPreference set to Stop
+$ErrorActionPreference = "SilentlyContinue"
 & git push --force
+if($LASTEXITCODE -ne 0) { exit 1 }

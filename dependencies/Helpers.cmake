@@ -5,7 +5,7 @@ macro(prepare_dir dir)
 endmacro()
 
 macro(clone dependency_name repo branch)
-    message(STATUS "Cloning ${repo} to ${dir}")
+    message(STATUS "Cloning ${repo} to ${${dependency_name}_source_dir}")
     execute_process(COMMAND git clone --depth 1 --branch ${branch} "${repo}" "${${dependency_name}_source_dir}")
 endmacro()
 

@@ -1,6 +1,8 @@
 # logger
 Multi-level logger for C++. Supports logging to both console and file. Based on logger from [cginternals/cppassist](https://github.com/cginternals/cppassist). The documentation can be found [here](https://lukaswagner.github.io/logger/).
 
+[![](https://ci.appveyor.com/api/projects/status/lvb82mnhslxd65k6/branch/master?svg=true)](https://ci.appveyor.com/project/lukaswagner/logger/branch/master)
+
 ## Contents
 
 1. [Setup](#setup)
@@ -216,8 +218,3 @@ int main(int argc, char* argv[])
 ```
 [Wrn] [19:25:48] Input parsing  : Invalid input - The custom object contains the value 1338
 ```
-
-## Build Status
-| Branch | [Linux](https://travis-ci.com/lukaswagner/logger)                           | [Windows](https://ci.appveyor.com/project/lukaswagner/logger/branch/master)                          |
-|--------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| master | ![Build Status](https://travis-ci.com/lukaswagner/logger.svg?branch=master) | ![Build status](https://ci.appveyor.com/api/projects/status/lvb82mnhslxd65k6/branch/master?svg=true) |

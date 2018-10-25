@@ -51,7 +51,7 @@ Set-Location $cloneDir
 Remove-Item * -Recurse
 
 # copy docs to gh-pages dir
-$docsDir = '..\html'
+$docsDir = '..\build\html'
 Copy-Item $docsDir\* -Recurse
 
 # set up git config

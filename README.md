@@ -15,7 +15,6 @@ Multi-level logger for C++. Supports logging to both console and file. Based on 
     3. [Further Customization](#further-customization)
     3. [Debug Macros](#debug-macros)
     4. [Complete Example](#complete-example)
-3. [Build Status](#build-status)
 
 ## Setup
 

@@ -40,7 +40,11 @@ Add-Content -Path $configFile -Value $configContent
 $branch = 'gh-pages'
 $repoUri = 'git@github.com:lukaswagner/logger.git'
 $cloneDir = 'gh-pages'
-& git clone -b $branch $repoUri $cloneDir 2>&1
+# git doens't properly work together with ErrorActionPreference set to Stop
+$ErrorActionPreference = "SilentlyContinue"
+& git clone -b $branch $repoUri $cloneDir
+if($LASTEXITCODE -ne 0) { exit 1 }
+$ErrorActionPreference = "Stop"
 
 # clean gh-pages dir
 Set-Location $cloneDir

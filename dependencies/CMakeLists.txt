@@ -24,7 +24,7 @@ if(EXISTS ${GTEST_ROOT})
     message(STATUS "Found GTEST_ROOT: ${GTEST_ROOT}")
 else()
     prepare_dir(${googletest_base_dir})
-    clone(googletest https://github.com/google/googletest.git/ master)
+    clone(googletest https://github.com/google/googletest.git/ main)
     build(googletest -DBUILD_GTEST=ON -DBUILD_GMOCK=OFF -DINSTALL_GTEST=ON -Dgtest_force_shared_crt=ON)
 endif()
 

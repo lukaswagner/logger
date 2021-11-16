@@ -1,2 +1,6 @@
-*/
+*
 !cpp-style-settings/
+!.gitignore
+!CMakeLists.txt
+!DependencyStructure.cmake
+!Helpers.cmake

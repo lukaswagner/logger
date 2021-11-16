@@ -28,11 +28,11 @@ set(public_headers
     ${include_dir}/line.hpp
     ${include_dir}/logger.hpp
     ${include_dir}/macros.hpp
+    ${include_dir}/output.hpp
     ${export_header})
 
 set(private_headers
-    ${include_dir}/globals.hpp
-    ${include_dir}/output.hpp)
+    ${include_dir}/globals.hpp)
 
 set(sources
     ${source_dir}/globals.cpp

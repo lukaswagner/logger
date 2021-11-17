@@ -59,7 +59,7 @@ set(test_sources
 
 include_directories(${generated_header_dir})
 include_directories(${include_dir})
-add_library(logger SHARED ${public_headers} ${private_headers} ${sources})
+add_library(logger STATIC ${public_headers} ${private_headers} ${sources})
 
 include(GenerateExportHeader)
 generate_export_header(logger
